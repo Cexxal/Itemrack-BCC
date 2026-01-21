@@ -1,0 +1,25 @@
+## Interface: 20505
+## Title: ItemRack - Classic (Complete)
+## Version: 5.0.1
+## Author: Gello - Updated for Classic by Rottenbeer,Roadblock - Merged edition by Ionlydps, Chairface and Cexxal
+## Notes: Equipment set manager for quickly swapping gear (includes Options module)
+## SavedVariables: ItemRackSettings, ItemRackItems, ItemRackEvents
+## SavedVariablesPerCharacter: ItemRackUser
+## OptionalDeps: Masque, Blizzard_MacroUI
+## X-Curse-Project-ID: 340903
+
+# Libraries
+Libs\Libs.xml
+
+# Core ItemRack
+ItemRack.lua
+ItemRack.xml
+ItemRackButtons.lua
+ItemRackButtons.xml
+ItemRackEquip.lua
+ItemRackQueue.lua
+ItemRackEvents.lua
+
+# Options (previously LoadOnDemand - now integrated)
+ItemRackOptions.lua
+ItemRackOptions.xml
