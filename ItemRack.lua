@@ -667,7 +667,6 @@ function ItemRack.ChangeSpecForSet(targetSpec, setname)
 	-- Only swap specs if we're not already in the requested spec
 	local currentSpec = ItemRack.GetActiveSpec()
 	if currentSpec and tonumber(currentSpec) == targetSpec then
-		-- Already in the desired spec; do nothing (and suppress the spam message)
 		return
 	end
 	
