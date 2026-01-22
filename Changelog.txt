@@ -1,3 +1,8 @@
+__ New in 5.0.3 - By Chairface __
+* Removed arrow texture on itemslots when disabled.
+
+__ New in 5.0.2 - Merger of addon with fork. Cexal and Chairface
+
 __ New in 5.0.1 - By Ionlydps and Chairface __
 * Merged ItemRack and ItemRackOptions into a single integrated addon
 * Options UI now loads immediately (no LoadOnDemand delay)
@@ -5,7 +10,7 @@ __ New in 5.0.1 - By Ionlydps and Chairface __
 * Added initialization guards for early loading scenarios
 * Cleaner single-addon installation
 * Fix TOC for BCC_Anniv by Chairface
-* ExternalEventListener
+* ExternalEventListener Fixes
 * EnableAddOn deprecated
 * Fixed keybindings not being saved (missing SaveBindings call)
 * Fixed buttonName reference bugs in BindSet and BindSlot functions

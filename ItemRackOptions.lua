@@ -299,6 +299,10 @@ function ItemRackOpt.UpdateInv()
 		border = _G["ItemRackOptInv"..i.."Border"]
 		item = _G["ItemRackOptInv"..i]
 		border:Hide()
+		-- Always hide the Arrow texture
+		if item.Arrow then
+			item.Arrow:SetAlpha(0)
+		end
 		if ItemRackOpt.Inv[i].id~=0 then
 			_,texture = ItemRack.GetInfoByID(ItemRackOpt.Inv[i].id) --pass the button's ItemRack-style ID to a function that retrieves the texture for the item 
 			if ItemRackOpt.Inv[i].selected and ItemRack.GetCountByID(ItemRackOpt.Inv[i].id)==0 then
@@ -319,16 +323,8 @@ function ItemRackOpt.UpdateInv()
 			if ItemRackOpt.Inv[i].id==0 then
 				item:LockHighlight()
 			end
-			-- Hide arrow when selected
-			if item.Arrow then
-				item.Arrow:SetAlpha(0)
-			end
 		else
 			icon:SetVertexColor(.25,.25,.25)
-			-- Show arrow when not selected
-			if item.Arrow then
-				item.Arrow:SetAlpha(1)
-			end
 		end
 	end
 	ItemRackOpt.PopulateInvIcons()
