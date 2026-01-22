@@ -654,7 +654,20 @@ function ItemRack.ChangeSpecForSet(targetSpec, setname)
 	-- Can't change specs in arena or battleground
 	local inInstance, instanceType = IsInInstance()
 	if inInstance and (instanceType == "pvp" or instanceType == "arena") then
-		ItemRack.Print("Spec cannot be changed in a Battleground. Gear will be equipped, but spec change skipped.")
+		ItemRack.Print("Specialization cannot be changed in PvP. Gear will be equipped, but spec change skipped.")
+		return
+	end
+	
+	-- Normalize/validate targetSpec
+	targetSpec = tonumber(targetSpec)
+	if not targetSpec or targetSpec <= 0 then
+		return
+	end
+
+	-- Only swap specs if we're not already in the requested spec
+	local currentSpec = ItemRack.GetActiveSpec()
+	if currentSpec and tonumber(currentSpec) == targetSpec then
+		-- Already in the desired spec; do nothing (and suppress the spam message)
 		return
 	end
 	
@@ -662,6 +675,7 @@ function ItemRack.ChangeSpecForSet(targetSpec, setname)
 	ItemRack.Print("Switching to spec "..targetSpec.." for set \""..tostring(setname).."\"")
 	ItemRack.SetActiveSpec(targetSpec)
 end
+
 
 function ItemRack.OnSetBagItem(tooltip, bag, slot)
 	ItemRack.ListSetsHavingItem(tooltip, ItemRack.GetID(bag, slot), true)
